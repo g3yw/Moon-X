@@ -38,7 +38,7 @@ return [[
                 if Found == false then
                     local NewServer = FindNewServer()
                     if NewServer then
-                        queue_on_teleport(loadstring(game:HttpGet(""))())
+                        queue_on_teleport(loadstring(game:HttpGet("https://raw.githubusercontent.com/g3yw/Moon-X/refs/heads/main/test.lua"))())
                         TeleportService:TeleportToPlaceInstance(game.PlaceId, NewServer, Players.LocalPlayer)
                     end
                 end
