@@ -22,7 +22,7 @@ return [[
     end
 
     local SelectedRiftsRaw = readfile("Moonx/SelectedRifts.txt")
-    print("[MoonX] SelectedRifts content:", SelectedRiftsRaw)
+    print("[MoonX] SelectedRifts content: " .. SelectedRiftsRaw)
 
     if SelectedRiftsRaw == "none" then
         print("[MoonX] SelectedRifts is 'none', loading loader...")
@@ -33,18 +33,18 @@ return [[
     local Found = false
 
     for Line in SelectedRiftsRaw:gmatch("[^\r\n]+") do
-        print("[MoonX] Checking Rift:", Line)
+        print("[MoonX] Checking Rift: " .. Line)
         local Rift = Rifts:FindFirstChild(Line)
         if Rift then
             if string.find(Line, "egg") then
-                print("[MoonX] Found egg rift:", Line)
+                print("[MoonX] Found egg rift: " .. Line)
                 local Display = Rift:FindFirstChild("Display")
                 local SurfaceGui = Display and Display:FindFirstChild("SurfaceGui")
                 local Icon = SurfaceGui and SurfaceGui:FindFirstChild("Icon")
                 local LuckLabel = Icon and Icon:FindFirstChild("Luck")
                 local Luck = LuckLabel and LuckLabel.Text
 
-                print("[MoonX] Egg Luck value:", Luck)
+                print("[MoonX] Egg Luck value: " .. tostring(Luck))
 
                 if Line ~= "aura-egg" and Luck == "x25" then
                     print("[MoonX] Matching egg found with x25 luck, loading loader...")
@@ -55,13 +55,13 @@ return [[
                     print("[MoonX] Egg did not match criteria")
                 end
             else
-                print("[MoonX] Matching rift found:", Line)
+                print("[MoonX] Matching rift found: " .. Line)
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/MateoDev2024/MoonX/refs/heads/main/Loader.lua"))()
                 Found = true
                 break
             end
         else
-            print("[MoonX] Rift not found:", Line)
+            print("[MoonX] Rift not found: " .. Line)
         end
     end
 
@@ -72,5 +72,3 @@ return [[
         TeleportService:Teleport(game.PlaceId, Player)
     end
 ]]
-
--- If your looking at this, ts sloppy asf bc its rushed. Works though 🤷‍♂️
