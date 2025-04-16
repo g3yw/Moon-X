@@ -17,7 +17,7 @@ return [[
 
     if not isfile("Moonx/SelectedRifts.txt") then
         print("[MoonX] SelectedRifts.txt not found, loading loader...")
-        (loadstring or load)(game:HttpGet("https://raw.githubusercontent.com/MateoDev2024/MoonX/refs/heads/main/Loader.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/MateoDev2024/MoonX/refs/heads/main/Loader.lua"))()
         return
     end
 
@@ -26,7 +26,7 @@ return [[
 
     if SelectedRiftsRaw == "none" then
         print("[MoonX] SelectedRifts is 'none', loading loader...")
-        (loadstring or load)(game:HttpGet("https://raw.githubusercontent.com/MateoDev2024/MoonX/refs/heads/main/Loader.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/MateoDev2024/MoonX/refs/heads/main/Loader.lua"))()
         return
     end
 
@@ -48,7 +48,7 @@ return [[
 
                 if Line ~= "aura-egg" and Luck == "x25" then
                     print("[MoonX] Matching egg found with x25 luck, loading loader...")
-                    (loadstring or load)(game:HttpGet("https://raw.githubusercontent.com/MateoDev2024/MoonX/refs/heads/main/Loader.lua"))()
+                    loadstring(game:HttpGet("https://raw.githubusercontent.com/MateoDev2024/MoonX/refs/heads/main/Loader.lua"))()
                     Found = true
                     break
                 else
@@ -56,7 +56,7 @@ return [[
                 end
             else
                 print("[MoonX] Matching rift found:", Line)
-                (loadstring or load)(game:HttpGet("https://raw.githubusercontent.com/MateoDev2024/MoonX/refs/heads/main/Loader.lua"))()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/MateoDev2024/MoonX/refs/heads/main/Loader.lua"))()
                 Found = true
                 break
             end
