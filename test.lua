@@ -67,7 +67,10 @@ return [[
 
     if not Found then
         print("[MoonX] No matching rift found, teleporting to another server in 5 seconds...")
-        queue_on_teleport(game:HttpGet("https://raw.githubusercontent.com/g3yw/Moon-X/refs/heads/main/test.lua"))
+        
+        local Data = loadstring(game:HttpGet("https://raw.githubusercontent.com/g3yw/Moon-X/refs/heads/main/test.lua"))()
+
+        queue_on_teleport(Data)
         task.wait(5)
         TeleportService:Teleport(game.PlaceId, Player)
     end
