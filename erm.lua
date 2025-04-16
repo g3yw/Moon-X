@@ -56,7 +56,7 @@ return [[
         end
 
         if CanTeleport() then
-            local Data = loadstring(game:HttpGet("https://raw.githubusercontent.com/g3yw/Moon-X/refs/heads/main/test.lua"))()
+            local Data = loadstring(game:HttpGet("https://raw.githubusercontent.com/g3yw/Moon-X/refs/heads/main/erm.lua"))()
             queue_on_teleport(Data)
             task.wait(5)
 
