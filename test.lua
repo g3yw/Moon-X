@@ -25,6 +25,11 @@ return [[
             if isfile("Moonx/SelectedRifts.txt") then
                 local SelectedRiftsRaw = readfile("Moonx/SelectedRifts.txt")
 
+                if SelectedRiftsRaw == "none" then         
+                    (loadstring or load)(game:HttpGet("https://raw.githubusercontent.com/MateoDev2024/MoonX/refs/heads/main/Loader.lua"))()
+                    return
+                end
+
                 local Found = false
 
                 for Line in SelectedRiftsRaw:gmatch("[^\r\n]+") do
